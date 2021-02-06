@@ -1,0 +1,17 @@
+body { 
+    background-color: rgb(120, 150, 120); 
+    width: 70%;
+    margin: auto;
+    margin-top: 0;
+    color: aliceblue;
+    align-items: center;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.main {
+    background-color: rgb(174, 187, 174);
+}

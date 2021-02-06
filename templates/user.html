@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+  <div><a href="/">Book List</a> <a href="/user">User List</a></div>
+    <div>
+      <h1>Book tracker</h1>
+      <h2>User information</h2>
+        <form method="POST" action="/user">
+            User name : <input type="text" name="user_name"><br>
+            User email : <input type="text" name="user_email"><br>
+            Date : <input type="date" name="start_date"><br>
+            Book id : <input type="text" name="book_id"><br>
+            <input type="submit" value="Add">
+        </form>
+        <h2>Your list</h2>  
+        <table>
+          {% for i in user_data %}
+            <tr>
+              <td>
+                <h1>{{i.book.book_title}} </h1>
+                {{i.user_name}} / {{i.user_email}} / {{i.start_date}}<br>
+                <form method="POST" action="./update_user">
+                  <input type="hidden" value="{{i.id}}" name="id">
+                  <input type="text" value="{{i.user_name}}" name="new_user_name">
+  
+                  <input type="hidden" value="{{i.user_email}}" name="id">
+                  <input type="text" value="{{i.user_email}}" name="new_user_email">
+                
+                  <input type="hidden" value="{{i.start_date}}" name="id">
+                  <input type="text" value="{{i.start_date}}" name="new_start_date">
+
+                  <input type="submit" value="Update_user">
+                </form>
+                <form method="POST" action="./delete_user">
+                  <input type="hidden" value="{{i.id}}" name="id">
+                  <input type="submit" value="Delete">
+                </form>
+              </td>
+            </tr>
+              {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
