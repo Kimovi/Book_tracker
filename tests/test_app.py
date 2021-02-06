@@ -6,7 +6,7 @@ from application.models import Book, Users
 
 class TestBase(TestCase):
     def create_app(self):
-        app.config.update(SQLAlCHEMY_DATABASE_URI= "sqlite:////")
+        app.config.update(SQLAlCHEMY_DATABASE_URI= "mysql+pymysql://bora:password@localhost:3306/Book")
         return app
 
     def setUp(self):
