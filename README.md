@@ -1,3 +1,9 @@
-#Book tracker
-This is exiting new project using Python and Flask. 
-I will be working on another CRUD project, this time I will add DB as well!
+# Book tracker
+
+
+# ERD diagram
+explain your relational DB
+one-to-many
+# Work flow diagram
+
+# Pytest
