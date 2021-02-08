@@ -18,7 +18,7 @@ Here are more details of the tools I have used for this project.
 - ERD and CI diagrams to understand the workflow clearly
 - Risk Assessment
 
-I have built a Library book tracking system to ensure any books you have, and who is possessing which item.
+I have built a Library book tracking system to ensure to list up any books you have, and who is possessing which item.
 The application is very simple, and straightforward. Just input your booklist into the main page, then go to the 'user' page to add the user's detail and which book was borrowed by adding book id number. Once the item is returned to you, then simply just delete the user detail. 
 
 
@@ -60,7 +60,7 @@ On the first attempt of running the test, I had a total of 95% pass result and 1
 This is how it looks like after fixing the error. test coverage went down 95% to 90% as I eliminated unessential tests.
 
 
-# Continuous Integration Workflow diagram
+# Continuous Integration Workflow
 I have used Jenkins for CI server to the automation of the project. I used VScode for writing the code, commit and push it to Github repository. This will automatically push to Jenkins which I installed it on GCP instance and trigger shell script where I stored commands for running the project such as installing requirements.txt, running Pytest, and deploy with Gunicorn. 
 
 <img width="635" alt="Pytest_jenkins" src="https://user-images.githubusercontent.com/59723479/107153266-7aa1c400-6964-11eb-92da-8edc8eb54f03.png">
