@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
     <title>Users</title>
 </head>
 <body>
   <div><a href="/">Book List</a> <a href="/user">User List</a></div>
     <div>
       <h1>Book tracker</h1>
+      <div class=main>
       <h2>User information</h2>
         <form method="POST" action="/user">
             User name : <input type="text" name="user_name"><br>
@@ -44,6 +46,7 @@
             </tr>
               {% endfor %}
         </table>
+      </div>
     </div>
 </body>
 </html>
