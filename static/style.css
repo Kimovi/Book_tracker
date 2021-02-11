@@ -7,6 +7,11 @@ body {
     align-items: center;
 }
 
+.nav {
+    font-weight: 200;
+    background-color:cadetblue;
+}
+
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
@@ -14,4 +19,8 @@ h1 {
 
 .main {
     background-color: rgb(174, 187, 174);
+}
+
+.buttons {
+    display: flex;
 }

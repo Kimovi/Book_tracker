@@ -7,10 +7,9 @@
     <title>Users</title>
 </head>
 <body>
-  <div><a href="/">Book List</a> <a href="/user">User List</a></div>
-    <div>
-      <h1>Book tracker</h1>
+  <div class="nav"><a href="/">Book List</a> <a href="/user">User List</a></div>
       <div class=main>
+      <h1>Book tracker</h1>
       <h2>User information</h2>
         <form method="POST" action="/user">
             User name : <input type="text" name="user_name"><br>
@@ -24,7 +23,7 @@
           {% for i in user_data %}
             <tr>
               <td>
-                <h1>{{i.book.book_title}} </h1>
+                <h2>{{i.book.book_title}} </h2>
                 {{i.user_name}} / {{i.user_email}} / {{i.start_date}}<br>
                 <form method="POST" action="./update_user">
                   <input type="hidden" value="{{i.id}}" name="id">
@@ -47,6 +46,5 @@
               {% endfor %}
         </table>
       </div>
-    </div>
 </body>
 </html>
