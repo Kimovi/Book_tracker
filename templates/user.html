@@ -7,7 +7,7 @@
     <title>Users</title>
 </head>
 <body>
-  <div class="nav"><a href="/">Book List</a> <a href="/user">User List</a></div>
+  <div class="nav"><a href="/">Book List</a> <a href="/user">User List</a> <a href="/update">Update</a></div>
       <div class=main>
       <h1>Book tracker</h1>
       <h2>User information</h2>
@@ -25,22 +25,24 @@
               <td>
                 <h2>{{i.book.book_title}} </h2>
                 {{i.user_name}} / {{i.user_email}} / {{i.start_date}}<br>
-                <form method="POST" action="./update_user">
-                  <input type="hidden" value="{{i.id}}" name="id">
-                  <input type="text" value="{{i.user_name}}" name="new_user_name">
-  
-                  <input type="hidden" value="{{i.user_email}}" name="id">
-                  <input type="text" value="{{i.user_email}}" name="new_user_email">
-                
-                  <input type="hidden" value="{{i.start_date}}" name="id">
-                  <input type="text" value="{{i.start_date}}" name="new_start_date">
+                <div class ="buttons">
+                    <form method="POST" action="./update_user">
+                    <input type="hidden" value="{{i.id}}" name="id">
+                    <input type="text" value="{{i.user_name}}" name="new_user_name">
+    
+                    <input type="hidden" value="{{i.user_email}}" name="id">
+                    <input type="text" value="{{i.user_email}}" name="new_user_email">
+                  
+                    <input type="hidden" value="{{i.start_date}}" name="id">
+                    <input type="text" value="{{i.start_date}}" name="new_start_date">
 
-                  <input type="submit" value="Update_user">
-                </form>
-                <form method="POST" action="./delete_user">
-                  <input type="hidden" value="{{i.id}}" name="id">
-                  <input type="submit" value="Delete">
-                </form>
+                    <input type="submit" value="Update_user">
+                    </form>
+                    <form method="POST" action="./delete_user">
+                      <input type="hidden" value="{{i.id}}" name="id">
+                      <input type="submit" value="Delete">
+                    </form>
+                </div>
               </td>
             </tr>
               {% endfor %}

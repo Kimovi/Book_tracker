@@ -8,8 +8,8 @@ body {
 }
 
 .nav {
-    font-weight: 200;
-    background-color:cadetblue;
+    font-size: 20px;
+    align-items: right;
 }
 
 h1 {
@@ -23,4 +23,8 @@ h1 {
 
 .buttons {
     display: flex;
+}
+
+#submit {
+    width: 50px;
 }
