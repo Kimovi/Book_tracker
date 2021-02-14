@@ -56,3 +56,16 @@ def delete():
     db.session.delete(book_db)
     db.session.commit()
     return redirect("/")
+
+###########################################################################################
+
+@app.route("/book_update", methods=["GET", "POST"])
+def book_update():
+    book_db = Book.query.filter_by(book_title=request.form.get("current_book_title")).first()
+    book_db.book_title = request.form.get("newbook_title")
+    book_db.author = request.form.get("new_author")
+    
+    db.session.commit()
+    book_lists = Book.query.all()
+
+    return render_template("book_update.html", book_lists=book_lists)

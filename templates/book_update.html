@@ -1,20 +1,15 @@
-<html>
-  <head>
-    <title>Book</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-  </head>
-  <body>
-    <div class="nav"><a href="/">Book List</a> <a href="/user">User List</a> <a href="/book_update">Update</a></div>
-    <div class ="main">
-        <h1>Book tracker</h1>
-        <h2>Book list</h2>
-        <form method="POST" action="/">
-          Book title : <input type="text" name="book_title"><br>
-          Author : <input type="text" name="author"><br>
-          <input id="submit" type="submit" value="Add">
-        </form> 
-      <h2>Book list</h2>  
-      <table>
+    <title>Update</title>
+</head>
+<body>
+    <h1>This is update page</h1>
+
+    <table>
         {% for i in book_lists %}
           <tr>
             <td>
@@ -44,5 +39,6 @@
           </tr>
             {% endfor %}
       </table>
- </body>
+      
+</body>
 </html>
