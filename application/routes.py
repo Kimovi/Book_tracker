@@ -35,11 +35,21 @@ def delete_user():
 def home():
     if request.form:
         book_db = Book(book_title=request.form.get("book_title"), author=request.form.get("author"))
-
         db.session.add(book_db)
         db.session.commit()
     book_lists = Book.query.all()
     return render_template("index.html", book_lists=book_lists)
+
+###########################################################################################
+
+@app.route("/book_update", methods=["GET", "POST"])
+def book_update():
+    if request.form:
+        book_db = Book(book_title=request.form.get("book_title"), author=request.form.get("author"))
+        db.session.add(book_db)
+        db.session.commit()
+    book_lists = Book.query.all()
+    return render_template("book_update.html", book_lists=book_lists)
 
 @app.route("/update", methods=["POST"])
 def update():
@@ -48,24 +58,11 @@ def update():
     book_db.author = request.form.get("new_author")
     
     db.session.commit()
-    return redirect("/")
+    return redirect("/book_update")
 
 @app.route("/delete", methods=["POST"])
 def delete():
     book_db = Book.query.filter_by(book_title=request.form.get("book_title")).first()
     db.session.delete(book_db)
     db.session.commit()
-    return redirect("/")
-
-###########################################################################################
-
-@app.route("/book_update", methods=["GET", "POST"])
-def book_update():
-    book_db = Book.query.filter_by(book_title=request.form.get("current_book_title")).first()
-    book_db.book_title = request.form.get("newbook_title")
-    book_db.author = request.form.get("new_author")
-    
-    db.session.commit()
-    book_lists = Book.query.all()
-
-    return render_template("book_update.html", book_lists=book_lists)
+    return redirect("/book_update")

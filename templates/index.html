@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
   </head>
   <body>
-    <div class="nav"><a href="/">Book List</a> <a href="/user">User List</a> <a href="/book_update">Update</a></div>
+    <div class="nav"><a href="/">Book List</a> <a href="/user">User List</a> <a href="/book_update">Update Book List</a></div>
     <div class ="main">
         <h1>Book tracker</h1>
         <h2>Book list</h2>
@@ -20,7 +20,7 @@
             <td>
               <h2>{{i.id}}. {{i.book_title}}</h2>
               {{i.author}}<br>
-              <div class ="buttons">
+              <!-- <div class ="buttons">
                 <div>
                 <form method="POST" action="./update">
                 <input type="hidden" value="{{i.book_title}}" name="current_book_title">
@@ -36,7 +36,7 @@
                   <input type="hidden" value="{{i.book_title}}" name="book_title">
                   <input type="submit" value="Delete">
                 </form>
-                </div>
+                </div> -->
                 
               </div>
               
