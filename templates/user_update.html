@@ -9,10 +9,10 @@
 <body>
     <div class="nav"><a href="/">Book List</a> <a href="/user">User List</a> <a href="/book_update">Update Book List</a> <a href="/user_update">Update User list</a></div>
     <div class ="main">
-    <h1>This is update page</h1>
+    <h1>Update User list</h1>
 
     <table>
-        {% for i in book_lists %}
+        {% for i in user_data %}
           <tr>
             <td>
               <h2>{{i.id}}. {{i.book_title}}</h2>

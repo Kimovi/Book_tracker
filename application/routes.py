@@ -13,21 +13,21 @@ def user_home():
     user_data = Users.query.all()
     return render_template("user.html", user_data=user_data)
 
-@app.route("/update_user", methods=["POST"])
-def update_user():
-    user_db = Users.query.filter_by(id=request.form.get("id")).first()
-    user_db.user_name = request.form.get("new_user_name")
-    user_db.user_email = request.form.get("new_user_email")
-    user_db.start_date = request.form.get("new_start_date")
-    db.session.commit()
-    return redirect("/user")
+# @app.route("/update_user", methods=["POST"])
+# def update_user():
+#     user_db = Users.query.filter_by(id=request.form.get("id")).first()
+#     user_db.user_name = request.form.get("new_user_name")
+#     user_db.user_email = request.form.get("new_user_email")
+#     user_db.start_date = request.form.get("new_start_date")
+#     db.session.commit()
+#     return redirect("/user")
 
-@app.route("/delete_user", methods=["POST"])
-def delete_user():
-    user_db = Users.query.filter_by(id=request.form.get("id")).first()
-    db.session.delete(user_db)
-    db.session.commit()
-    return redirect("/user")
+# @app.route("/delete_user", methods=["POST"])
+# def delete_user():
+#     user_db = Users.query.filter_by(id=request.form.get("id")).first()
+#     db.session.delete(user_db)
+#     db.session.commit()
+#     return redirect("/user")
 
 ###########################################################################################
 
@@ -66,3 +66,30 @@ def delete():
     db.session.delete(book_db)
     db.session.commit()
     return redirect("/book_update")
+
+###########################################################################################
+
+@app.route('/user_update', methods=["GET","POST"])
+def user_update_home():
+    if request.form:
+        user_db = Users(user_name=request.form.get("user_name"), user_email=request.form.get("user_email"), start_date = request.form.get("start_date"), book_id=request.form.get("book_id"))
+        db.session.add(user_db)
+        db.session.commit()
+    user_data = Users.query.all()
+    return render_template("user_update.html", user_data=user_data)
+
+@app.route("/update_user", methods=["POST"])
+def update_user():
+    user_db = Users.query.filter_by(id=request.form.get("id")).first()
+    user_db.user_name = request.form.get("new_user_name")
+    user_db.user_email = request.form.get("new_user_email")
+    user_db.start_date = request.form.get("new_start_date")
+    db.session.commit()
+    return redirect("/user_update")
+
+@app.route("/delete_user", methods=["POST"])
+def delete_user():
+    user_db = Users.query.filter_by(id=request.form.get("id")).first()
+    db.session.delete(user_db)
+    db.session.commit()
+    return redirect("/user_update")
