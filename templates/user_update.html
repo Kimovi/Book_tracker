@@ -16,25 +16,25 @@
           <tr>
             <td>
               <h2>{{i.id}}. {{i.book_title}}</h2>
-              <div class ="buttons">
-                <div>
-                <form method="POST" action="./update">
-                <input type="hidden" value="{{i.book_title}}" name="current_book_title">
-                <input type="text" value="{{i.book_title}}" name="newbook_title">
 
-                <input type="hidden" value="{{i.author}}" name="current_author">
-                <input type="text" value="{{i.author}}" name="new_author">
-                <input type="submit" value="Update">
+              <div class ="buttons">
+                <form method="POST" action="./update_user">
+                <input type="hidden" value="{{i.id}}" name="id">
+                <input type="text" value="{{i.user_name}}" name="new_user_name">
+
+                <input type="hidden" value="{{i.user_email}}" name="id">
+                <input type="text" value="{{i.user_email}}" name="new_user_email">
+              
+                <input type="hidden" value="{{i.start_date}}" name="id">
+                <input type="text" value="{{i.start_date}}" name="new_start_date">
+
+                <input type="submit" value="Update_user">
                 </form>
-                </div>
-                <div>
-                  <form method="POST" action="./delete">
-                  <input type="hidden" value="{{i.book_title}}" name="book_title">
+                <form method="POST" action="./delete_user">
+                  <input type="hidden" value="{{i.id}}" name="id">
                   <input type="submit" value="Delete">
                 </form>
-                </div>
-                
-              </div>
+            </div>
               
             </td>
           </tr>
